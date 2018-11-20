@@ -1,0 +1,36 @@
+{
+  "name": "better-recent-comments",
+  "version": "1.0.5",
+  "description": "Better Recent Comments plugin for WordPress.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andykeith/better-recent-comments.git"
+  },
+  "keywords": [
+    "comments",
+    "plugin",
+    "wordpress"
+  ],
+  "author": "Barn2 Media",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/andykeith/better-recent-comments/issues"
+  },
+  "homepage": "https://github.com/andykeith/better-recent-comments#readme",
+  "devDependencies": {
+    "fs": "0.0.1-security",
+    "gulp": "^4.0.0",
+    "gulp-checktextdomain": "^2.2.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-debug": "^4.0.0",
+    "gulp-header": "^2.0.5",
+    "gulp-rename": "^1.4.0",
+    "gulp-run": "^1.7.1",
+    "gulp-uglify": "^3.0.1",
+    "pump": "^3.0.0"
+  }
+}

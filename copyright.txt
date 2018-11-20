@@ -1,0 +1,4 @@
+/*!
+ * Better Recent Comments <%= version %>
+ * Copyright 2016-2018 Barn2 Media Ltd
+ */
