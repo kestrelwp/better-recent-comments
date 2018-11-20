@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * This class provides utility functions for the Better Recent Comments plugin.
  *
- * @package   Barn2\Better_Recent_Comments
+ * @package   Better_Recent_Comments
  * @author    Andrew Keith <andy@barn2.co.uk>
  * @license   GPL-3.0
  * @link      https://barn2.co.uk
@@ -45,7 +45,7 @@ class Better_Recent_Comments_Util {
 			$format .= ' {date}';
 		}
 
-		return $format;
+		return apply_filters( 'better_recent_comments_comment_format', $format );
 	}
 
 	public static function get_recent_comments( $args ) {
@@ -85,7 +85,7 @@ class Better_Recent_Comments_Util {
 		$comments_list_class = 'recent-comments-list';
 
 		// Use .recentcomments class on li's to match WP_Recent_Comments widget
-		$comment_li_fmt = '<li class="recentcomments recent-comment"><div class="comment-wrap"%s>%s</div></li>';
+		$comment_li_fmt = apply_filters( 'better_recent_comments_li_format', '<li class="recentcomments recent-comment"><div class="comment-wrap"%s>%s</div></li>' );
 
 		if ( is_array( $comments ) && $comments ) {
 			// Prime cache for associated posts. (Prime post term cache if we need it for permalinks.)
@@ -98,6 +98,7 @@ class Better_Recent_Comments_Util {
 			$link_from	 = self::comment_link_from( $format );
 			$excerpts	 = isset( $args['excerpts'] ) ? filter_var( $args['excerpts'], FILTER_VALIDATE_BOOLEAN ) : $defaults['excerpts'];
 			$avatar_size = empty( $args['avatar_size'] ) ? false : filter_var( $args['avatar_size'], FILTER_VALIDATE_INT );
+			$link_fmt	 = apply_filters( 'better_recent_comments_comment_link_format', '<a href="%s">%s</a>' );
 
 			if ( ! $avatar_size ) {
 				$avatar_size = $defaults['avatar_size'];
@@ -109,12 +110,10 @@ class Better_Recent_Comments_Util {
 			}
 
 			foreach ( (array) $comments as $comment ) {
-				$link_fmt = '<a href="' . esc_url( get_comment_link( $comment->comment_ID ) ) . '">%s</a>';
-
-				$avatar	 = get_avatar( $comment, $avatar_size );
-				$author	 = get_comment_author_link( $comment->comment_ID );
-				$date	 = get_comment_date( $date_format, $comment->comment_ID );
-				$post	 = get_the_title( $comment->comment_post_ID );
+				$avatar	 = apply_filters( 'better_recent_comments_avatar', get_avatar( $comment, $avatar_size ), $comment );
+				$author	 = apply_filters( 'better_recent_comments_comment_author_link', get_comment_author_link( $comment->comment_ID ), $comment );
+				$date	 = apply_filters( 'better_recent_comments_comment_date', get_comment_date( $date_format, $comment->comment_ID ), $comment, $date_format );
+				$post	 = apply_filters( 'better_recent_comments_post_title', get_the_title( $comment->comment_post_ID ), $comment );
 
 				if ( $excerpts ) {
 					$comment_text = get_comment_excerpt( $comment->comment_ID );
@@ -126,23 +125,26 @@ class Better_Recent_Comments_Util {
 					}
 				}
 
+				$comment_text	 = apply_filters( 'better_recent_comments_comment_text', $comment_text, $comment );
+				$comment_url	 = apply_filters( 'better_recent_comments_comment_url', esc_url( get_comment_link( $comment->comment_ID ) ) );
+
 				if ( 'post' === $link_from ) {
-					$post = sprintf( $link_fmt, $post );
+					$post = sprintf( $link_fmt, $comment_url, $post );
 				} elseif ( 'date' === $link_from ) {
-					$date = sprintf( $link_fmt, $date );
+					$date = sprintf( $link_fmt, $comment_url, $date );
 				} elseif ( 'comment' === $link_from ) {
-					$comment_text = sprintf( $link_fmt, $comment_text );
+					$comment_text = sprintf( $link_fmt, $comment_url, $comment_text );
 				}
 
-				$comment_content = str_replace(
-					array( '{avatar}', '{author}', '{comment}', '{date}', '{post}' ), array(
+				$comment_content = apply_filters( 'better_recent_comments_comment_content', str_replace(
+						array( '{avatar}', '{author}', '{comment}', '{date}', '{post}' ), array(
 					'<span class="comment-avatar">' . $avatar . '</span>',
 					'<span class="comment-author-link">' . $author . '</span>',
 					'<span class="comment-excerpt">' . $comment_text . '</span>',
 					'<span class="comment-date">' . $date . '</span>',
 					'<span class="comment-post">' . $post . '</span>'
-					), $format
-				);
+						), $format
+					), $comment );
 
 				$output .= sprintf( $comment_li_fmt, $comment_item_style, $comment_content );
 			} // foreach comment

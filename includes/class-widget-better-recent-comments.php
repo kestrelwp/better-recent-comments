@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * This class provides the Better Recent Comments widget.
  *
- * @package   Barn2\Better_Recent_Comments
+ * @package   Better_Recent_Comments
  * @author    Andrew Keith <andy@barn2.co.uk>
  * @license   GPL-3.0
  * @link      https://barn2.co.uk

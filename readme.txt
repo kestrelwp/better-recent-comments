@@ -2,9 +2,9 @@
 Contributors: andykeith, barn2media
 Donate link: http://barn2.co.uk
 Tags: comments, widget, shortcode, wpml
-Requires at least: 3.6
-Tested up to: 4.9.2
-Stable tag: 1.0.5
+Requires at least: 4.0
+Tested up to: 4.9.8
+Stable tag: 1.0.6
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -22,9 +22,9 @@ Translations currently provided in Spanish, French and Italian.
 
 Options available with the shortcode:
 
+* `format` - the format of each recent comment. This option uses 'placeholders' which are substituted with the actual data when the comments are displayed. See the FAQs for details.
 * `number` - the number of comments to display. Default: 5 comments
-* `format` - the format of each recent comment. This option uses placeholders, e.g. {date}, which are then substituted with the actual data when the comments are displayed. This allows you to choose the exact format you want for your recent comments. Available placeholders are {avatar}, {author}, {post}, {comment} and {date}. The {post} placeholder will display the post title and link to the user's comment below that post. Defaults to {author} on {post}: "{comment}" {date}
-* `date_format` - the PHP date format to use. Defaults to 'M j, H:i'. See [this cheat sheet](http://barn2.co.uk/PHP-Date-Format.pdf) for a full list of date and time options.
+* `date_format` - the date and time format to use. Like WordPress, this uses a PHP date format. It defaults to 'M j, H:i'. See [this cheat sheet](http://barn2.co.uk/PHP-Date-Format.pdf) for a full list of date and time options.
 * `avatar_size` - the size of the avatar in pixels. Only used if you have included {avatar} in your comment format (see 'format' option). Default: 50
 * `post_status` - the status of posts to retrieve comments for. Defaults to 'publish'. Can be any valid status or a comma-separated list of statuses.
 * `excerpts` - set to 'true' to show an excerpt of the comment (limited to 20 words), or 'false' to show the full comment. Default: true
@@ -41,11 +41,26 @@ Options available with the shortcode:
 = How do I add the widget? =
 To add the widget, go to Appearance -> Widgets, and find the 'Better Recent Comments' widget in the list, then drag to any widget area. You can then set the title for the widget, the number of comments to show, and choose to show or hide the comment avatars, dates, comment text and post link.
 
+If you would prefer to use the shortcode to set more specific options, add a Text widget to yout sidebar instead, and then add the `[better_recent_comments]` shortcode to your widget.
+
 = How do I use the shortcode? =
 Add `[better_recent_comments]` to any post or page.
 
 = What are the shortcode options? =
 See the main [plugin description](https://wordpress.org/plugins/better-recent-comments/) for the list of options.
+
+= How do I control the format of the comments using the `format` shortcode option? =
+The `format` option allows you to choose the exact format you want for your recent comments. This option uses placeholders which are substituted with the actual data when the comments are displayed.
+
+The available placeholders are: `{avatar}`, `{author}`, `{post}`, `{comment}` and `{date}`.
+
+* `{avatar}` is the comment author's Gravatar image.
+* `{author}` is the comment author's name.
+* `{post}` is the title of the post, and contains a link to the author's comment below the post.
+* '{comment}` is the actual comment text.
+* '{date}` is the comment date (see the `date_format` option in the main description to set the date format)
+
+Defaults to: `{author} on {post}: "{comment}" {date}`
 
 = Can I see a demo of the plugin? =
 Yes, please visit http://barn2.co.uk/better-recent-comments-demo/ to see Better Recent Comments in action.
@@ -64,6 +79,12 @@ Unfortunately not. We've developed this free plugin to be flexible and easy to c
 1. Recent comments added to a page.
 
 == Changelog ==
+
+= 1.0.6 =
+Release date 20 November 2018
+
+ * Added extra hooks for easier customization.
+ * Tested with latest version of WordPress.
 
 = 1.0.5 =
 Release date 22 February 2018

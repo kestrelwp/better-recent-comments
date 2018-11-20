@@ -5,7 +5,7 @@
  * @wordpress-plugin
  * Plugin Name:       Better Recent Comments
  * Description:       This plugin provides an improved widget and shortcode to show your most recent comments. If using WPML, comments are limited to posts in the current language.
- * Version:           1.0.5
+ * Version:           1.0.6
  * Author:            Barn2 Media
  * Author URI:        http://barn2.co.uk
  * Text Domain:       better-recent-comments
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * The main plugin class.
 
- * @package   Barn2\Better_Recent_Comments
+ * @package   Better_Recent_Comments
  * @author    Andrew Keith <andy@barn2.co.uk>
  * @license   GPL-3.0
  * @link      https://barn2.co.uk
