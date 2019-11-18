@@ -1,12 +1,13 @@
 === Better Recent Comments ===
 Contributors: andykeith, barn2media
-Donate link: http://barn2.co.uk
+Donate link: https://barn2.co.uk
 Tags: comments, widget, shortcode, wpml
-Requires at least: 4.0
-Tested up to: 5.2
-Stable tag: 1.0.6
-License: GNU General Public License v3.0
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Requires at least: 4.4
+Tested up to: 5.3
+Requires PHP: 5.3
+Stable tag: 1.1
+License: GPL-3.0
+License URI: https://www.gnu.org/licenses/gpl.html
 
 Provides an improved Recent Comments widget and a shortcode to display your recent comments on any post or page.
 
@@ -79,6 +80,12 @@ Unfortunately not. We've developed this free plugin to be flexible and easy to c
 1. Recent comments added to a page.
 
 == Changelog ==
+
+= 1.1 =
+Release date 18 November 2019
+
+ * Update plugin architecture and Barn2 library code.
+ * Tested up to WordPress 5.3.
 
 = 1.0.6 =
 Release date 20 November 2018
