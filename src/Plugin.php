@@ -22,6 +22,8 @@ class Plugin extends Simple_Plugin implements Registerable {
             'file'    => $file,
             'version' => $version
         ] );
+
+        include_once __DIR__ . '/deprecated.php';
     }
 
     public function register() {

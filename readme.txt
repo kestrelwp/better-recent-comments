@@ -5,7 +5,7 @@ Tags: comments, widget, shortcode, wpml
 Requires at least: 4.4
 Tested up to: 5.3
 Requires PHP: 5.3
-Stable tag: 1.1
+Stable tag: 1.1.1
 License: GPL-3.0
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -80,6 +80,11 @@ Unfortunately not. We've developed this free plugin to be flexible and easy to c
 1. Recent comments added to a page.
 
 == Changelog ==
+
+= 1.1.1 =
+Release date 18 November 2019
+
+ * Add backwards compatibility for 1.0.6 functions removed in 1.1.
 
 = 1.1 =
 Release date 18 November 2019
