@@ -48,7 +48,7 @@ If you would prefer to use the shortcode to set more specific options, add a Tex
 Add `[better_recent_comments]` to any post or page.
 
 = What are the shortcode options? =
-See the main [plugin description](https://wordpress.org/plugins/better-recent-comments/) for the list of options.
+See the main [plugin description](https://wordpress.org/plugins/better-recent-comments/) for the list of shortcode options.
 
 = How do I control the format of the comments using the `format` shortcode option? =
 The `format` option allows you to choose the exact format you want for your recent comments. This option uses placeholders which are substituted with the actual data when the comments are displayed.
