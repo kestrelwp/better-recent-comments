@@ -1,11 +1,11 @@
 === Better Recent Comments ===
 Contributors: andykeith, barn2media
 Donate link: https://barn2.co.uk
-Tags: comments, widget, shortcode, wpml
-Requires at least: 4.4
-Tested up to: 5.3
-Requires PHP: 5.3.2
-Stable tag: 1.1.1
+Tags: comments, widget, avatar, shortcode, wpml
+Requires at least: 4.5
+Tested up to: 5.4.1
+Requires PHP: 5.6
+Stable tag: 1.1.2
 License: GPL-3.0
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -80,6 +80,12 @@ Unfortunately not. We've developed this free plugin to be flexible and easy to c
 1. Recent comments added to a page.
 
 == Changelog ==
+
+= 1.1.2 =
+Release date 26 May 2020
+
+ * Tested up to WordPress 5.4.1.
+ * Added filter to disable inline CSS for avatars.
 
 = 1.1.1 =
 Release date 18 November 2019

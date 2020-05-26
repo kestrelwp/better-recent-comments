@@ -1,20 +1,23 @@
 <?php
 namespace Barn2\Plugin\Better_Recent_Comments;
 
+use WP_Widget,
+    Barn2\Plugin\Better_Recent_Comments\Util;
+
 /**
  * This class provides the Better Recent Comments widget.
  *
- * @author    Barn2 Media <info@barn2.co.uk>
+ * @package   Barn2\better-recent-comments
+ * @author    Barn2 Plugins <support@barn2.co.uk>
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  */
-class Widget extends \WP_Widget {
+class Widget extends WP_Widget {
 
     // A unique identifier for the widget
     const WIDGET_ID = 'better_recent_comments';
 
     public function __construct() {
-
         parent::__construct(
             self::WIDGET_ID, __( 'Better Recent Comments', 'better-recent-comments' ), array(
             'classname'   => 'widget_recent_comments',
@@ -22,13 +25,13 @@ class Widget extends \WP_Widget {
             )
         );
 
-        add_action( 'comment_post', array( $this, 'flush_widget_cache' ) );
-        add_action( 'edit_comment', array( $this, 'flush_widget_cache' ) );
-        add_action( 'transition_comment_status', array( $this, 'flush_widget_cache' ) );
+        \add_action( 'comment_post', array( $this, 'flush_widget_cache' ) );
+        \add_action( 'edit_comment', array( $this, 'flush_widget_cache' ) );
+        \add_action( 'transition_comment_status', array( $this, 'flush_widget_cache' ) );
     }
 
     public function flush_widget_cache() {
-        wp_cache_delete( self::WIDGET_ID, 'widget' );
+        \wp_cache_delete( self::WIDGET_ID, 'widget' );
     }
 
     /**
@@ -59,14 +62,14 @@ class Widget extends \WP_Widget {
 
         $title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Recent Comments', 'better-recent-comments' );
         // This filter is documented in wp-includes/default-widgets.php
-        $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
+        $title = \apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
         if ( $title ) {
             $output .= $args['before_title'] . $title . $args['after_title'];
         }
 
         $instance['format']      = Util::get_comment_format( $instance['date'], $instance['comment'], $instance['link'], $instance['avatar'] );
-        $instance['avatar_size'] = apply_filters( 'recent_comments_lang_widget_avatar_size', 40 );
+        $instance['avatar_size'] = \apply_filters( 'recent_comments_lang_widget_avatar_size', 40 );
 
         $output .= Util::get_recent_comments( $instance );
 
@@ -76,7 +79,7 @@ class Widget extends \WP_Widget {
 
         if ( ! $this->is_preview() ) {
             $cache[$args['widget_id']] = $output;
-            wp_cache_set( self::WIDGET_ID, $cache, 'widget' );
+            \wp_cache_set( self::WIDGET_ID, $cache, 'widget' );
         }
     }
 
@@ -90,8 +93,8 @@ class Widget extends \WP_Widget {
 
         $instance = $old_instance;
 
-        $instance['title']   = strip_tags( $new_instance['title'] );
-        $instance['number']  = absint( $new_instance['number'] );
+        $instance['title']   = \strip_tags( $new_instance['title'] );
+        $instance['number']  = \absint( $new_instance['number'] );
         $instance['avatar']  = isset( $new_instance['avatar'] ) ? true : false;
         $instance['date']    = isset( $new_instance['date'] ) ? true : false;
         $instance['comment'] = isset( $new_instance['comment'] ) ? true : false;
@@ -107,9 +110,9 @@ class Widget extends \WP_Widget {
      * @param array instance The array of keys and values for the widget.
      */
     public function form( $instance ) {
-        $instance = wp_parse_args( $instance, array( 'title' => '' ) );
+        $instance = \wp_parse_args( $instance, array( 'title' => '' ) );
 
-        $number = isset( $instance['number'] ) ? filter_var( $instance['number'], \FILTER_VALIDATE_INT ) : false;
+        $number = isset( $instance['number'] ) ? \filter_var( $instance['number'], \FILTER_VALIDATE_INT ) : false;
         if ( ! $number ) {
             $number = 5;
         }
@@ -120,23 +123,23 @@ class Widget extends \WP_Widget {
         ?>
         <p>
             <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'better-recent-comments' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo \esc_attr( $instance['title'] ); ?>" />
         </p>
         <p>
             <label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of comments to show:', 'better-recent-comments' ); ?></label>
             <input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" />
         </p>
         <p>
-            <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'avatar' ); ?>" name="<?php echo $this->get_field_name( 'avatar' ); ?>"<?php checked( $show_avatar ); ?> />
+            <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'avatar' ); ?>" name="<?php echo $this->get_field_name( 'avatar' ); ?>"<?php \checked( $show_avatar ); ?> />
             <label for="<?php echo $this->get_field_id( 'avatar' ); ?>"><?php _e( 'Show avatar', 'better-recent-comments' ); ?></label><br />
 
-            <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'date' ); ?>" name="<?php echo $this->get_field_name( 'date' ); ?>"<?php checked( $show_date ); ?> />
+            <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'date' ); ?>" name="<?php echo $this->get_field_name( 'date' ); ?>"<?php \checked( $show_date ); ?> />
             <label for="<?php echo $this->get_field_id( 'date' ); ?>"><?php _e( 'Show date', 'better-recent-comments' ); ?></label><br />
 
-            <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'comment' ); ?>" name="<?php echo $this->get_field_name( 'comment' ); ?>"<?php checked( $show_comment ); ?> />
+            <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'comment' ); ?>" name="<?php echo $this->get_field_name( 'comment' ); ?>"<?php \checked( $show_comment ); ?> />
             <label for="<?php echo $this->get_field_id( 'comment' ); ?>"><?php _e( 'Show comment', 'better-recent-comments' ); ?></label><br />
 
-            <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'link' ); ?>" name="<?php echo $this->get_field_name( 'link' ); ?>"<?php checked( $show_link ); ?> />
+            <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'link' ); ?>" name="<?php echo $this->get_field_name( 'link' ); ?>"<?php \checked( $show_link ); ?> />
             <label for="<?php echo $this->get_field_id( 'link' ); ?>"><?php _e( 'Show post link', 'better-recent-comments' ); ?></label>
         </p>
         <?php

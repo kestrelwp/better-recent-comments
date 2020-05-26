@@ -5,7 +5,8 @@ namespace Barn2\Plugin\Better_Recent_Comments;
 /**
  * Factory to create/return the shared plugin instance.
  *
- * @author    Barn2 Media <info@barn2.co.uk>
+ * @package   Barn2\better-recent-comments
+ * @author    Barn2 Plugins <support@barn2.co.uk>
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  */

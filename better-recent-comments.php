@@ -3,12 +3,17 @@
 /**
  * The main plugin file for Better Recent Comments.
  *
+ * @package   Barn2\better-recent-comments
+ * @author    Barn2 Plugins <support@barn2.co.uk>
+ * @license   GPL-3.0
+ * @copyright Barn2 Media Ltd
+ *
  * @wordpress-plugin
  * Plugin Name:     Better Recent Comments
  * Plugin URI:      https://wordpress.org/plugins/better-recent-comments/
  * Description:     This plugin provides an improved widget and shortcode to show your most recent comments. If using WPML, comments are limited to posts in the current language.
- * Version:         1.1.1
- * Author:          Barn2 Media
+ * Version:         1.1.2
+ * Author:          Barn2 Plugins
  * Author URI:      https://barn2.co.uk
  * Text Domain:     better-recent-comments
  * Domain Path:     /languages
@@ -20,15 +25,15 @@
 namespace Barn2\Plugin\Better_Recent_Comments;
 
 // Prevent direct file access
-if ( ! defined( 'ABSPATH' ) ) {
+if ( ! \defined( 'ABSPATH' ) ) {
     exit;
 }
 
-const PLUGIN_VERSION = '1.1.1';
+const PLUGIN_VERSION = '1.1.2';
 const PLUGIN_FILE    = __FILE__;
 
 // Autoloader.
-require_once plugin_dir_path( __FILE__ ) . 'autoloader.php';
+require_once \plugin_dir_path( __FILE__ ) . 'autoloader.php';
 
 // Helper function to access the shared plugin instance.
 function better_recent_comments() {
