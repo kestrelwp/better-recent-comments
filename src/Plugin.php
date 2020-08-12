@@ -1,9 +1,8 @@
 <?php
-
 namespace Barn2\Plugin\Better_Recent_Comments;
 
-use Barn2\Lib\Plugin\Simple_Plugin,
-    Barn2\Lib\Registerable,
+use Barn2\BRC_Lib\Plugin\Simple_Plugin,
+    Barn2\BRC_Lib\Registerable,
     Barn2\Plugin\Better_Recent_Comments\Widget;
 
 /**
@@ -30,39 +29,39 @@ class Plugin extends Simple_Plugin implements Registerable {
 
     public function register() {
         // Load the text domain
-        \add_action( 'init', array( $this, 'load_textdomain' ) );
+        add_action( 'init', array( $this, 'load_textdomain' ) );
 
         // Register the widget
-        \add_action( 'widgets_init', array( $this, 'register_widget' ) );
+        add_action( 'widgets_init', array( $this, 'register_widget' ) );
 
         // Register shortcode
-        \add_shortcode( self::SHORTCODE, array( $this, 'shortcode' ) );
+        add_shortcode( self::SHORTCODE, array( $this, 'shortcode' ) );
 
         // Register styles and scripts
-        if ( \apply_filters( 'recent_comments_lang_load_styles', true ) ) {
-            \add_action( 'wp_enqueue_scripts', array( $this, 'register_styles' ) );
+        if ( apply_filters( 'recent_comments_lang_load_styles', true ) ) {
+            add_action( 'wp_enqueue_scripts', array( $this, 'register_styles' ) );
         }
 
         // Filters for comment text.
-        \add_filter( 'better_recent_comments_comment_text', 'wptexturize' );
-        \add_filter( 'better_recent_comments_comment_text', 'convert_chars' );
-        \add_filter( 'better_recent_comments_comment_text', 'convert_smilies', 20 );
+        add_filter( 'better_recent_comments_comment_text', 'wptexturize' );
+        add_filter( 'better_recent_comments_comment_text', 'convert_chars' );
+        add_filter( 'better_recent_comments_comment_text', 'convert_smilies', 20 );
     }
 
     public function load_textdomain() {
-        \load_plugin_textdomain( 'better-recent-comments', false, $this->get_slug() . '/languages' );
+        load_plugin_textdomain( 'better-recent-comments', false, $this->get_slug() . '/languages' );
     }
 
     public function register_widget() {
-        \register_widget( Widget::class );
+        register_widget( Widget::class );
     }
 
     public function register_styles() {
-        \wp_enqueue_style( 'better-recent-comments', \plugins_url( 'assets/css/better-recent-comments.min.css', $this->get_file() ) );
+        wp_enqueue_style( 'better-recent-comments', plugins_url( 'assets/css/better-recent-comments.min.css', $this->get_file() ) );
     }
 
     public function shortcode( $atts, $content = '' ) {
-        $atts = \shortcode_atts( Util::default_shortcode_args(), $atts, self::SHORTCODE );
+        $atts = shortcode_atts( Util::default_shortcode_args(), $atts, self::SHORTCODE );
         return Util::get_recent_comments( $atts );
     }
 
