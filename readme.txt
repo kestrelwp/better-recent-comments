@@ -85,6 +85,7 @@ Unfortunately not. We've developed this free plugin to be flexible and easy to c
 Release date 12 August 2020
 
  * Tested up to WordPress 5.5.
+ * Added Composer support
  * Minor code improvements.
 
 = 1.1.2 =

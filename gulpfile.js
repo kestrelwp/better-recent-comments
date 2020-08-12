@@ -34,7 +34,7 @@ module.exports = {
     assets: barn2build.buildAssets,
     library: barn2build.updateLibrary,
     zip: barn2build.createZipFile,
-    release: barn2build.releasePlugin,
+    release: barn2build.releaseFreePlugin,
     pluginTesting: barn2build.updatePluginTesting,
     watch: () => {
         watch( 'assets/scss/**/*.scss', barn2build.compileSass );
