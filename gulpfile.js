@@ -1,7 +1,7 @@
 const pluginData = {
-    'name': 'Better Recent Comments',
-    'libNamespace': 'Barn2\\BRC_Lib',
-    'libIncludes': ['Plugin/Plugin.php', 'Plugin/Simple_Plugin.php']
+    name: 'Better Recent Comments',
+    libNamespace: 'Barn2\\BRC_Lib',
+    libIncludes: ['Plugin/Plugin.php', 'Plugin/Simple_Plugin.php']
 };
 
 const { src, dest, watch, series, parallel } = require( 'gulp' );
