@@ -21,6 +21,8 @@ That's not all! The plugin is also WPML compatible, which means that the comment
 
 Translations currently provided in Spanish, French and Italian.
 
+View the full [plugin documentation] ](https://barn2.co.uk/kb-categories/better-recent-comments-kb/) in our Knowledge Base.
+
 Options available with the shortcode:
 
 * `format` - the format of each recent comment. This option uses 'placeholders' which are substituted with the actual data when the comments are displayed. See the FAQs for details.
@@ -75,9 +77,13 @@ If you have a multilingual site using WPML then the plugin will display comments
 = Can you customize the plugin for me? =
 Unfortunately not. We've developed this free plugin to be flexible and easy to configure so that it will be suitable for as many different websites as possible.
 
+= Where can I find the documentation? =
+Please visit our [Knowledge Base](https://barn2.co.uk/kb-categories/better-recent-comments-kb/).
+
 == Screenshots ==
 
-1. Recent comments added to a page.
+1. This page shows recent comments added to a page using the [better_recent_comments] shortcode.
+1. Adding the Better Recent Comments widget to the sidebar.
 
 == Changelog ==
 
