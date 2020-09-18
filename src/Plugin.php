@@ -3,6 +3,7 @@ namespace Barn2\Plugin\Better_Recent_Comments;
 
 use Barn2\BRC_Lib\Plugin\Simple_Plugin,
     Barn2\BRC_Lib\Registerable,
+    Barn2\BRC_Lib\Plugin\Admin\Admin_Links,
     Barn2\Plugin\Better_Recent_Comments\Widget;
 
 /**
@@ -19,9 +20,10 @@ class Plugin extends Simple_Plugin implements Registerable {
 
     public function __construct( $file, $version = '1.0' ) {
         parent::__construct( [
-            'name'    => 'Better Recent Comments',
-            'file'    => $file,
-            'version' => $version
+            'name'               => 'Better Recent Comments',
+            'file'               => $file,
+            'version'            => $version,
+            'documentation_path' => 'kb-categories/better-recent-comments-kb/'
         ] );
 
         include_once __DIR__ . '/deprecated.php';
@@ -46,6 +48,11 @@ class Plugin extends Simple_Plugin implements Registerable {
         add_filter( 'better_recent_comments_comment_text', 'wptexturize' );
         add_filter( 'better_recent_comments_comment_text', 'convert_chars' );
         add_filter( 'better_recent_comments_comment_text', 'convert_smilies', 20 );
+
+        if ( is_admin() ) {
+            $admin_links = new Admin_Links( $this );
+            $admin_links->register();
+        }
     }
 
     public function load_textdomain() {
