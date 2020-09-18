@@ -21,7 +21,7 @@ That's not all! The plugin is also WPML compatible, which means that the comment
 
 Translations currently provided in Spanish, French and Italian.
 
-View the full [plugin documentation] ](https://barn2.co.uk/kb-categories/better-recent-comments-kb/) in our Knowledge Base.
+View the full [plugin documentation](https://barn2.co.uk/kb-categories/better-recent-comments-kb/) in our Knowledge Base.
 
 Options available with the shortcode:
 
@@ -82,7 +82,7 @@ Please visit our [Knowledge Base](https://barn2.co.uk/kb-categories/better-recen
 
 == Screenshots ==
 
-1. This page shows recent comments added to a page using the [better_recent_comments] shortcode.
+1. This page shows comments added to a page using the shortcode.
 1. Adding the Better Recent Comments widget to the sidebar.
 
 == Changelog ==
