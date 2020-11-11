@@ -29,7 +29,8 @@ Options available with the shortcode:
 * `number` - the number of comments to display. Default: 5 comments
 * `date_format` - the date and time format to use. Like WordPress, this uses a PHP date format. It defaults to 'M j, H:i'. See [this cheat sheet](http://barn2.co.uk/PHP-Date-Format.pdf) for a full list of date and time options.
 * `avatar_size` - the size of the avatar in pixels. Only used if you have included {avatar} in your comment format (see 'format' option). Default: 50
-* `post_status` - the status of posts to retrieve comments for. Defaults to 'publish'. Can be any valid status or a comma-separated list of statuses.
+* `post_status` - the status of posts to retrieve comments for. Defaults to 'publish'. Can be a single status or a comma-separated list, or 'any' to show comments for all post statuses.
+* `post_type` - the post type to retrieve comments for. Accepts a single post type (e.g. 'post') or 'any' to show comments for all post types.
 * `excerpts` - set to 'true' to show an excerpt of the comment (limited to 20 words), or 'false' to show the full comment. Default: true
 
 == Installation ==
