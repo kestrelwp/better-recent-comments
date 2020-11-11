@@ -18,6 +18,7 @@ class Util {
             'date_format' => 'M j, H:i',
             'avatar_size' => 50,
             'post_status' => 'publish',
+            'post_type'   => '',
             'excerpts'    => true
         );
     }
@@ -55,6 +56,7 @@ class Util {
             'number'      => absint( filter_var( $args['number'], FILTER_VALIDATE_INT ) ),
             'status'      => 'approve',
             'post_status' => $post_status,
+            'post_type'   => sanitize_key( $args['post_type'] ),
             'type'        => apply_filters( 'better_recent_comments_comment_type', 'comment' )
         );
 
