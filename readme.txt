@@ -72,6 +72,10 @@ Yes, please visit http://barn2.co.uk/better-recent-comments-demo/ to see Better 
 = Will it work with my theme? =
 The plugin has been designed to work with different themes and will take the styling from your theme for the fonts etc. where possible.
 
+= How do I display comments for media files/attachments? =
+Use the shortcode as follows: 
+`[better_recent_comments post_type="attachment" post_status="any"]`
+
 = How do I use the plugin with WPML? =
 If you have a multilingual site using WPML then the plugin will display comments for the correct language automatically.
 
