@@ -1,5 +1,4 @@
 <?php
-
 namespace Barn2\BRC_Lib\Plugin;
 
 use Barn2\BRC_Lib\Util;
@@ -9,7 +8,7 @@ use Barn2\BRC_Lib\Util;
  * WordPress plugin (ID, version number, etc). Data is passed as an array on construction.
  *
  * @package   Barn2\barn2-lib
- * @author    Barn2 Plugins <info@barn2.co.uk>
+ * @author    Barn2 Plugins <support@barn2.com>
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  * @version   1.2
@@ -23,20 +22,26 @@ class Simple_Plugin implements Plugin {
     private $dir_url  = null;
 
     public function __construct( array $data ) {
-        $this->data = \array_merge(
-            array(
-                'name'               => '',
-                'version'            => '',
-                'file'               => null,
-                'is_woocommerce'     => false,
-                'is_edd'             => false,
-                'documentation_path' => '',
-                'settings_path'      => '',
-            ), $data
+        $this->data = array_merge( [
+            'id'                 => 0,
+            'name'               => '',
+            'version'            => '',
+            'file'               => null,
+            'is_woocommerce'     => false,
+            'is_edd'             => false,
+            'documentation_path' => '',
+            'settings_path'      => '',
+            ], $data
         );
 
-        $this->data['documentation_path'] = \ltrim( $this->data['documentation_path'], '/' );
-        $this->data['settings_path']      = \ltrim( $this->data['settings_path'], '/' );
+        $this->data['id']                 = (int) $this->data['id'];
+        $this->data['documentation_path'] = ltrim( $this->data['documentation_path'], '/' );
+        $this->data['settings_path']      = ltrim( $this->data['settings_path'], '/' );
+
+        // Check for 'item_id' in case 'id' not set.
+        if ( ! $this->get_id() && ! empty( $this->data['item_id'] ) ) {
+            $this->data['id'] = (int) $this->data['item_id'];
+        }
 
         // WooCommerce plugins cannot be EDD plugins (and vice-versa).
         if ( $this->is_edd() ) {
@@ -47,7 +52,16 @@ class Simple_Plugin implements Plugin {
     }
 
     /**
-     * Gets the name of this plugin.
+     * Get the plugin ID, usually the EDD Download ID.
+     *
+     * $return int The plugin ID.
+     */
+    public function get_id() {
+        return $this->data['id'];
+    }
+
+    /**
+     * Get the name of this plugin.
      *
      * @return string The plugin name.
      */
@@ -56,7 +70,7 @@ class Simple_Plugin implements Plugin {
     }
 
     /**
-     * Gets the plugin version number (e.g. 1.3.2).
+     * Get the plugin version number (e.g. 1.3.2).
      *
      * @return string The version number.
      */
@@ -65,7 +79,7 @@ class Simple_Plugin implements Plugin {
     }
 
     /**
-     * Gets the full path to the main plugin file.
+     * Get the full path to the main plugin file.
      *
      * @return string The plugin file.
      */
@@ -74,23 +88,23 @@ class Simple_Plugin implements Plugin {
     }
 
     /**
-     * Gets the slug for this plugin (e.g. my-plugin).
+     * Get the slug for this plugin (e.g. my-plugin).
      *
      * @return string The plugin slug.
      */
     public function get_slug() {
         $dir_path = $this->get_dir_path();
-        return ! empty( $dir_path ) ? \basename( $dir_path ) : '';
+        return ! empty( $dir_path ) ? basename( $dir_path ) : '';
     }
 
     /**
-     * Gets the 'basename' for the plugin (e.g. my-plugin/my-plugin.php).
+     * Get the 'basename' for the plugin (e.g. my-plugin/my-plugin.php).
      *
      * @return string The plugin basename.
      */
     public function get_basename() {
         if ( null === $this->basename ) {
-            $this->basename = ! empty( $this->data['file'] ) ? \plugin_basename( $this->data['file'] ) : '';
+            $this->basename = ! empty( $this->data['file'] ) ? plugin_basename( $this->data['file'] ) : '';
         }
         return $this->basename;
     }
@@ -102,7 +116,7 @@ class Simple_Plugin implements Plugin {
      */
     public function get_dir_path() {
         if ( null === $this->dir_path ) {
-            $this->dir_path = ! empty( $this->data['file'] ) ? \plugin_dir_path( $this->data['file'] ) : '';
+            $this->dir_path = ! empty( $this->data['file'] ) ? plugin_dir_path( $this->data['file'] ) : '';
         }
         return $this->dir_path;
     }
@@ -114,7 +128,7 @@ class Simple_Plugin implements Plugin {
      */
     public function get_dir_url() {
         if ( null === $this->dir_url ) {
-            $this->dir_url = ! empty( $this->data['file'] ) ? \plugin_dir_url( $this->data['file'] ) : '';
+            $this->dir_url = ! empty( $this->data['file'] ) ? plugin_dir_url( $this->data['file'] ) : '';
         }
         return $this->dir_url;
     }
@@ -161,7 +175,7 @@ class Simple_Plugin implements Plugin {
      * @return string (URL)
      */
     public function get_settings_page_url() {
-        return ! empty( $this->data['settings_path'] ) ? \admin_url( $this->data['settings_path'] ) : '';
+        return ! empty( $this->data['settings_path'] ) ? admin_url( $this->data['settings_path'] ) : '';
     }
 
 }

@@ -11,7 +11,7 @@ use Barn2\BRC_Lib\Registerable,
  * Core admin functions for our plugins (e.g. adding the settings link).
  *
  * @package   Barn2\barn2-lib
- * @author    Barn2 Plugins <info@barn2.co.uk>
+ * @author    Barn2 Plugins <support@barn2.com>
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  */
@@ -28,10 +28,10 @@ class Admin_Links implements Registerable, Service {
 
     public function register() {
         // Add settings link from Plugins page.
-        \add_filter( 'plugin_action_links_' . $this->plugin->get_basename(), array( $this, 'add_settings_link' ) );
+        add_filter( 'plugin_action_links_' . $this->plugin->get_basename(), array( $this, 'add_settings_link' ) );
 
         // Add documentation link to meta info on Plugins page.
-        \add_filter( 'plugin_row_meta', array( $this, 'add_documentation_link' ), 10, 2 );
+        add_filter( 'plugin_row_meta', array( $this, 'add_documentation_link' ), 10, 2 );
     }
 
     public function add_settings_link( $links ) {
@@ -49,7 +49,7 @@ class Admin_Links implements Registerable, Service {
             return $links;
         }
 
-        \array_unshift( $links, \sprintf( '<a href="%1$s">%2$s</a>', \esc_url( $settings_url ), __( 'Settings', 'better-recent-comments' ) ) );
+        array_unshift( $links, sprintf( '<a href="%1$s">%2$s</a>', esc_url( $settings_url ), __( 'Settings', 'better-recent-comments' ) ) );
         return $links;
     }
 
@@ -64,15 +64,15 @@ class Admin_Links implements Registerable, Service {
         }
 
         $row_meta = array(
-            'docs' => \sprintf(
+            'docs' => sprintf(
                 '<a href="%1$s" aria-label="%2$s" target="_blank">%3$s</a>',
-                \esc_url( $documentation_url ),
-                \esc_attr( \sprintf( __( 'View %s documentation', 'better-recent-comments' ), $this->plugin->get_name() ) ),
-                \esc_html__( 'Docs', 'better-recent-comments' )
+                esc_url( $documentation_url ),
+                esc_attr( sprintf( __( 'View %s documentation', 'better-recent-comments' ), $this->plugin->get_name() ) ),
+                esc_html__( 'Docs', 'better-recent-comments' )
             )
         );
 
-        return \array_merge( $links, $row_meta );
+        return array_merge( $links, $row_meta );
     }
 
 }

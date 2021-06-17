@@ -1,17 +1,23 @@
 <?php
-
 namespace Barn2\BRC_Lib\Plugin;
 
 /**
  * Basic interface implemented by all Barn2 plugins.
  *
  * @package   Barn2\barn2-lib
- * @author    Barn2 Plugins <info@barn2.co.uk>
+ * @author    Barn2 Plugins <support@barn2.com>
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  * @version   1.2
  */
 interface Plugin {
+
+    /**
+     * Get the plugin ID.
+     *
+     * $return int The plugin ID.
+     */
+    public function get_id();
 
     /**
      * Gets the name of this plugin.
