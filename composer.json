@@ -1,16 +1,25 @@
 {
     "name": "barn2/better-recent-comments",
     "description": "Better Recent Comments WordPress plugin",
-    "type": "project",
+    "type": "wordpress-plugin",
     "license": "GPL-3.0",
     "authors": [
         {
             "name": "Barn2 Plugins",
-            "email": "support@barn2.co.uk"
+            "email": "support@barn2.com"
         }
     ],
     "minimum-stability": "stable",
     "require": {},
+    "require-dev": {
+        "barn2/php-standards": "dev-master"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@bitbucket.org:barn2plugins/php-standards.git"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Barn2\\Plugin\\Better_Recent_Comments\\": "src",

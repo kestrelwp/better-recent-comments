@@ -1,11 +1,11 @@
 === Better Recent Comments ===
 Contributors: andykeith, barn2media
-Donate link: https://barn2.co.uk
+Donate link: https://barn2.com
 Tags: comments, widget, avatar, shortcode, wpml
-Requires at least: 4.6
-Tested up to: 5.5.3
+Requires at least: 4.8
+Tested up to: 5.7.2
 Requires PHP: 5.6
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 License: GPL-3.0
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -21,16 +21,16 @@ That's not all! The plugin is also WPML compatible, which means that the comment
 
 Translations currently provided in Spanish, French and Italian.
 
-View the full [plugin documentation](https://barn2.co.uk/kb-categories/better-recent-comments-kb/) in our Knowledge Base.
+View the full [plugin documentation](https://barn2.com/kb-categories/better-recent-comments-kb/) in our Knowledge Base.
 
 Options available with the shortcode:
 
 * `format` - the format of each recent comment. This option uses 'placeholders' which are substituted with the actual data when the comments are displayed. See the FAQs for details.
 * `number` - the number of comments to display. Default: 5 comments
-* `date_format` - the date and time format to use. Like WordPress, this uses a PHP date format. It defaults to 'M j, H:i'. See [this cheat sheet](http://barn2.co.uk/PHP-Date-Format.pdf) for a full list of date and time options.
+* `date_format` - the date and time format to use. Like WordPress, this uses a PHP date format. It defaults to 'M j, H:i'. See [this cheat sheet](https://barn2.com/PHP-Date-Format.pdf) for a full list of date and time options.
 * `avatar_size` - the size of the avatar in pixels. Only used if you have included {avatar} in your comment format (see 'format' option). Default: 50
 * `post_status` - the status of posts to retrieve comments for. Defaults to 'publish'. Can be a single status or a comma-separated list, or 'any' to show comments for all post statuses.
-* `post_type` - the post type to retrieve comments for. Accepts a single post type (e.g. 'post') or 'any' to show comments for all post types.
+* `post_type` - the post type to retrieve comments for. Accepts a single post type (e.g. 'post') or 'any' to show comments for all post types. Default: 'any'
 * `excerpts` - set to 'true' to show an excerpt of the comment (limited to 20 words), or 'false' to show the full comment. Default: true
 
 == Installation ==
@@ -67,7 +67,7 @@ The available placeholders are: `{avatar}`, `{author}`, `{post}`, `{comment}` an
 Defaults to: `{author} on {post}: "{comment}" {date}`
 
 = Can I see a demo of the plugin? =
-Yes, please visit http://barn2.co.uk/better-recent-comments-demo/ to see Better Recent Comments in action.
+Yes, please visit http://barn2.com/better-recent-comments-demo/ to see Better Recent Comments in action.
 
 = Will it work with my theme? =
 The plugin has been designed to work with different themes and will take the styling from your theme for the fonts etc. where possible.
@@ -83,7 +83,7 @@ If you have a multilingual site using WPML then the plugin will display comments
 Unfortunately not. We've developed this free plugin to be flexible and easy to configure so that it will be suitable for as many different websites as possible.
 
 = Where can I find the documentation? =
-Please visit our [Knowledge Base](https://barn2.co.uk/kb-categories/better-recent-comments-kb/).
+Please visit our [Knowledge Base](https://barn2.com/kb-categories/better-recent-comments-kb/).
 
 == Screenshots ==
 
@@ -91,6 +91,12 @@ Please visit our [Knowledge Base](https://barn2.co.uk/kb-categories/better-recen
 1. Adding the Better Recent Comments widget to the sidebar.
 
 == Changelog ==
+
+= 1.1.5 =
+Release date 17 June 2021
+
+ * Fix the WPML integration to support the 'post_type' option.
+ * Tested up to WordPress 5.7.2.
 
 = 1.1.4 =
 Release date 11 November 2020
