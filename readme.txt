@@ -66,20 +66,20 @@ The available placeholders are: `{avatar}`, `{author}`, `{post}`, `{comment}` an
 
 Defaults to: `{author} on {post}: "{comment}" {date}`
 
+= How do I set the length of the comments? =
+There is no built-in option for this, but you can set the length of the comments by adding the following code to your site.
+
+In the code below change '10' to the number of words you would like. If you are using the `[better_recent_comments]` shortcode, make sure to add the `excerpts="true"` option.
+
+``add_filter( 'comment_excerpt_length', function( $number_of_words ) {
+   return 10;
+} );``
+
 = Can I see a demo of the plugin? =
 Yes, please visit http://barn2.com/better-recent-comments-demo/ to see Better Recent Comments in action.
 
 = Will it work with my theme? =
 The plugin has been designed to work with different themes and will take the styling from your theme for the fonts etc. where possible.
-
-= How do I set the length of the comments? =
-There is no built-in option, but you can set the length of the comments by adding the following code to your site. In the code below change '10' to the number of words you would like. If you are using the `[better_recent_comments]` shortcode, make sure you add the `excerpts="true"` option.
-
-```
-add_filter( 'comment_excerpt_length', function( $number_of_words ) {
-   return 10;
-} );
-```
 
 = How do I display comments for media files/attachments? =
 Use the shortcode as follows: 
