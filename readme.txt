@@ -71,9 +71,11 @@ There is no built-in option for this, but you can set the length of the comments
 
 In the code below change '10' to the number of words you would like. If you are using the `[better_recent_comments]` shortcode, make sure to add the `excerpts="true"` option.
 
-``add_filter( 'comment_excerpt_length', function( $number_of_words ) {
+`
+add_filter( 'comment_excerpt_length', function( $number_of_words ) {
    return 10;
-} );``
+} );
+`
 
 = Can I see a demo of the plugin? =
 Yes, please visit http://barn2.com/better-recent-comments-demo/ to see Better Recent Comments in action.
