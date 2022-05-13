@@ -2,8 +2,8 @@
 Contributors: andykeith, barn2media
 Donate link: https://barn2.com
 Tags: comments, widget, avatar, shortcode, wpml
-Requires at least: 5.0
-Tested up to: 5.9
+Requires at least: 5.1
+Tested up to: 6.0
 Requires PHP: 7.1
 Stable tag: 1.1.5
 License: GPL-3.0
