@@ -42,7 +42,6 @@ class Widget extends WP_Widget {
 	 * @param array instance The current instance of the widget
 	 */
 	public function widget( $args, $instance ) {
-
 		// Check if there is a cached output
 		$cache = wp_cache_get( self::WIDGET_ID, 'widget' );
 
@@ -96,10 +95,10 @@ class Widget extends WP_Widget {
 
 		$instance['title']   = wp_strip_all_tags( $new_instance['title'] );
 		$instance['number']  = absint( $new_instance['number'] );
-		$instance['avatar']  = isset( $new_instance['avatar'] );
-		$instance['date']    = isset( $new_instance['date'] );
-		$instance['comment'] = isset( $new_instance['comment'] );
-		$instance['link']    = isset( $new_instance['link'] );
+		$instance['avatar']  = strlen( $new_instance['avatar'] ) > 0;
+		$instance['date']    = strlen( $new_instance['date'] ) > 0;
+		$instance['comment'] = strlen( $new_instance['comment'] ) > 0;
+		$instance['link']    = strlen( $new_instance['link'] ) > 0;
 
 		$this->flush_widget_cache();
 		return $instance;
