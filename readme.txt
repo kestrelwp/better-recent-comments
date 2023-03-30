@@ -32,6 +32,7 @@ Options available with the shortcode:
 * `post_status` - the status of posts to retrieve comments for. Defaults to 'publish'. Can be a single status or a comma-separated list, or 'any' to show comments for all post statuses.
 * `post_type` - the post type to retrieve comments for. Accepts a single post type (e.g. 'post') or 'any' to show comments for all post types. Default: 'any'
 * `excerpts` - set to 'true' to show an excerpt of the comment (limited to 20 words), or 'false' to show the full comment. Default: true
+* `replies` - set to 'true' to also show responses to comments, or 'false' to only see the top level comments. Default: true
 
 == Installation ==
 

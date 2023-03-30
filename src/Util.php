@@ -20,7 +20,8 @@ class Util {
 			'avatar_size' => 50,
 			'post_status' => 'publish',
 			'post_type'   => 'any',
-			'excerpts'    => true
+			'excerpts'    => true,
+			'replies'     => 'true',
 		];
 	}
 
@@ -53,12 +54,14 @@ class Util {
 		// Sanitize post status used to retrieve comments.
 		$post_status = array_filter( array_map( 'sanitize_key', explode( ',', $args['post_status'] ) ) );
 		$post_type   = sanitize_key( $args['post_type'] );
+		$replies     = sanitize_key( $args['replies'] );
 
 		$comment_args = [
 			'number'      => absint( filter_var( $args['number'], FILTER_VALIDATE_INT ) ),
 			'status'      => 'approve',
 			'post_status' => $post_status,
 			'post_type'   => $post_type,
+			'hierarchical'=> $replies == 'false' ? 'threaded' : false,
 			'type'        => apply_filters( 'better_recent_comments_comment_type', 'comment' )
 		];
 
