@@ -53,7 +53,7 @@ class Util {
 
 		// Sanitize post status used to retrieve comments.
 		$post_status = array_filter( array_map( 'sanitize_key', explode( ',', $args['post_status'] ) ) );
-		$post_type   = sanitize_key( $args['post_type'] );
+		$post_type   = array_filter( array_map( 'sanitize_key', explode( ',', $args['post_type'] ) ) );
 		$replies     = sanitize_key( $args['replies'] );
 
 		$comment_args = [
