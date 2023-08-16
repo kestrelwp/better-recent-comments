@@ -1,11 +1,11 @@
 === Better Recent Comments ===
-Contributors: andykeith, barn2media
+Contributors: andykeith, barn2media, amirition
 Donate link: https://barn2.com
 Tags: comments, widget, avatar, shortcode, wpml
 Requires at least: 5.1
 Tested up to: 6.3
 Requires PHP: 7.1
-Stable tag: 1.1.7
+Stable tag: 1.1.8
 License: GPL-3.0
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -30,7 +30,7 @@ Options available with the shortcode:
 * `date_format` - the date and time format to use. Like WordPress, this uses a PHP date format. It defaults to 'M j, H:i'. See [this cheat sheet](https://barn2.com/PHP-Date-Format.pdf) for a full list of date and time options.
 * `avatar_size` - the size of the avatar in pixels. Only used if you have included {avatar} in your comment format (see 'format' option). Default: 50
 * `post_status` - the status of posts to retrieve comments for. Defaults to 'publish'. Can be a single status or a comma-separated list, or 'any' to show comments for all post statuses.
-* `post_type` - the post type to retrieve comments for. Accepts a single post type (e.g. 'post') or 'any' to show comments for all post types. Default: 'any'
+* `post_type` - the post type to retrieve comments for. Accepts a single or multiple post types (e.g. 'post' or 'post, dlp_document') or 'any' to show comments for all post types. Default: 'any'
 * `excerpts` - set to 'true' to show an excerpt of the comment (limited to 20 words), or 'false' to show the full comment. Default: true
 * `replies` - set to 'true' to also show responses to comments, or 'false' to only see the top level comments. Default: true
 
@@ -103,6 +103,12 @@ Please visit our [Knowledge Base](https://barn2.com/kb-categories/better-recent-
 1. Adding the Better Recent Comments widget to the sidebar.
 
 == Changelog ==
+
+= 1.1.8 =
+Release date 17 Aug 2023
+
+ * Fixed warnings in PHP 8.1
+ * Support multi post types
 
 = 1.1.7 = 
 Release date 30 March 2023 
