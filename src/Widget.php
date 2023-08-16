@@ -95,10 +95,10 @@ class Widget extends WP_Widget {
 
 		$instance['title']   = wp_strip_all_tags( $new_instance['title'] );
 		$instance['number']  = absint( $new_instance['number'] );
-		$instance['avatar']  = strlen( $new_instance['avatar'] ) > 0;
-		$instance['date']    = strlen( $new_instance['date'] ) > 0;
-		$instance['comment'] = strlen( $new_instance['comment'] ) > 0;
-		$instance['link']    = strlen( $new_instance['link'] ) > 0;
+		$instance['avatar']  = isset( $new_instance['avatar'] ) ? strlen( $new_instance['avatar'] ) > 0 : false;
+		$instance['date']    = isset( $new_instance['date'] ) ? strlen( $new_instance['date'] ) > 0 : false;
+		$instance['comment'] = isset( $new_instance['comment'] ) ? strlen( $new_instance['comment'] )  > 0 : false;
+		$instance['link']    = isset( $new_instance['link'] ) ? strlen( $new_instance['link'] ) > 0 : false;
 
 		$this->flush_widget_cache();
 		return $instance;
