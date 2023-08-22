@@ -74,7 +74,7 @@ In the code below change '10' to the number of words you would like. If you are 
 
 ```
 add_filter( 'comment_excerpt_length', function( $number_of_words ) {
-   return 10;
+    return 10;
 } );
 ```
 
