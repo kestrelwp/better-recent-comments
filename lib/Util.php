@@ -3,6 +3,7 @@
 namespace Barn2\BRC_Lib;
 
 use Barn2\Plugin\WC_Quick_View_Pro\Quick_View_Plugin,
+    Barn2\WCB_Lib\Conditional,
     WC_Product_Table_Plugin,
     WC_Protected_Categories_Plugin;
 use function Barn2\Plugin\WC_Product_Table\wpt;
