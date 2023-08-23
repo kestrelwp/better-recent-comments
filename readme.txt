@@ -62,8 +62,8 @@ The available placeholders are: `{avatar}`, `{author}`, `{post}`, `{comment}` an
 * `{avatar}` is the comment author's Gravatar image.
 * `{author}` is the comment author's name.
 * `{post}` is the title of the post, and contains a link to the author's comment below the post.
-* '{comment}` is the actual comment text.
-* '{date}` is the comment date (see the `date_format` option in the main description to set the date format)
+* `{comment}` is the actual comment text.
+* `{date}` is the comment date (see the `date_format` option in the main description to set the date format)
 
 Defaults to: `{author} on {post}: "{comment}" {date}`
 
@@ -72,11 +72,11 @@ There is no built-in option for this, but you can set the length of the comments
 
 In the code below change '10' to the number of words you would like. If you are using the `[better_recent_comments]` shortcode, make sure to add the `excerpts="true"` option.
 
-`
+```
 add_filter( 'comment_excerpt_length', function( $number_of_words ) {
-   return 10;
+    return 10;
 } );
-`
+```
 
 = Can I see a demo of the plugin? =
 Yes, please visit http://barn2.com/better-recent-comments-demo/ to see Better Recent Comments in action.
