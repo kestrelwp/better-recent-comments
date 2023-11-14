@@ -107,6 +107,8 @@ Please visit our [Knowledge Base](https://barn2.com/kb-categories/better-recent-
 = 1.1.9 = 
 Release date 14 November 2023
 
+* Dev: Added the barn2 libraries
+* Dev: Tested up to WordPress 6.4
 
 = 1.1.8 =
 Release date 17 Aug 2023

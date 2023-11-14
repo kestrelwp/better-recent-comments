@@ -1,5 +1,6 @@
 <?php
-namespace Barn2\BRC_Lib;
+
+namespace Barn2\Plugin\Better_Recent_Comments\Dependencies\Lib;
 
 /**
  * An object that can be registered with WordPress via the Plugin API, i.e. add_action() and add_filter().
@@ -10,8 +11,12 @@ namespace Barn2\BRC_Lib;
  * @copyright Barn2 Media Ltd
  * @version   1.0
  */
-interface Registerable {
-
+interface Registerable
+{
+    /**
+     * Register this object with WordPress.
+     *
+     * @return void
+     */
     public function register();
-
 }

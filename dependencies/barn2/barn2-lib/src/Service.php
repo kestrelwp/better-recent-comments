@@ -1,6 +1,6 @@
 <?php
 
-namespace Barn2\BRC_Lib;
+namespace Barn2\Plugin\Better_Recent_Comments\Dependencies\Lib;
 
 /**
  * Marker interface to denote a service.
@@ -11,6 +11,6 @@ namespace Barn2\BRC_Lib;
  * @copyright Barn2 Media Ltd
  * @version   1.0
  */
-interface Service {
-
+interface Service
+{
 }

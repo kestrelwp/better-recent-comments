@@ -2,9 +2,9 @@
 
 namespace Barn2\Plugin\Better_Recent_Comments;
 
-use Barn2\BRC_Lib\Plugin\Simple_Plugin,
-	Barn2\BRC_Lib\Registerable,
-	Barn2\BRC_Lib\Plugin\Admin\Admin_Links,
+use Barn2\Plugin\Better_Recent_Comments\Dependencies\Lib\Plugin\Simple_Plugin,
+	Barn2\Plugin\Better_Recent_Comments\Dependencies\Lib\Registerable,
+	Barn2\Plugin\Better_Recent_Comments\Dependencies\Lib\Plugin\Admin\Admin_Links,
 	Barn2\Plugin\Better_Recent_Comments\Widget;
 
 /**

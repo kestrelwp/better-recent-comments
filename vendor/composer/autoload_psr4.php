@@ -7,5 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Barn2\\Plugin\\Better_Recent_Comments\\' => array($baseDir . '/src'),
-    'Barn2\\BRC_Lib\\' => array($baseDir . '/lib'),
 );
