@@ -85,7 +85,7 @@ Yes, please visit http://barn2.com/better-recent-comments-demo/ to see Better Re
 The plugin has been designed to work with different themes and will take the styling from your theme for the fonts etc. where possible.
 
 = How do I display comments for media files/attachments? =
-Use the shortcode as follows: 
+Use the shortcode as follows:
 `[better_recent_comments post_type="attachment" post_status="any"]`
 
 = How do I use the plugin with WPML? =
@@ -104,7 +104,7 @@ Please visit our [Knowledge Base](https://barn2.com/kb-categories/better-recent-
 
 == Changelog ==
 
-= 1.1.9 = 
+= 1.1.9 =
 Release date 14 November 2023
 
 * Dev: Added the barn2 libraries
@@ -113,59 +113,59 @@ Release date 14 November 2023
 = 1.1.8 =
 Release date 17 Aug 2023
 
- * Fixed warnings in PHP 8.1
- * Support multi post types
+* Fixed warnings in PHP 8.1
+* Support multi post types
 
-= 1.1.7 = 
-Release date 30 March 2023 
+= 1.1.7 =
+Release date 30 March 2023
 
- * Added support for the `replies` parameter in the shortcode 
+* Added support for the `replies` parameter in the shortcode
 
 = 1.1.6 =
 Release date 02 Jan 2023
 
- * Tested up to WordPress 6.1.1
+* Tested up to WordPress 6.1.1
 
 = 1.1.5 =
 Release date 17 June 2021
 
- * Fix the WPML integration to support the 'post_type' option.
- * Tested up to WordPress 5.7.2.
+* Fix the WPML integration to support the 'post_type' option.
+* Tested up to WordPress 5.7.2.
 
 = 1.1.4 =
 Release date 11 November 2020
 
- * Added 'post_type' shortcode option to allow comments to be shown for specific post types.
+* Added 'post_type' shortcode option to allow comments to be shown for specific post types.
 
 = 1.1.3 =
 Release date 12 August 2020
 
- * Tested up to WordPress 5.5.
- * Added Composer support
- * Minor code improvements.
+* Tested up to WordPress 5.5.
+* Added Composer support
+* Minor code improvements.
 
 = 1.1.2 =
 Release date 26 May 2020
 
- * Tested up to WordPress 5.4.1.
- * Added filter to disable inline CSS for avatars.
+* Tested up to WordPress 5.4.1.
+* Added filter to disable inline CSS for avatars.
 
 = 1.1.1 =
 Release date 18 November 2019
 
- * Add backwards compatibility for 1.0.6 functions removed in 1.1.
+* Add backwards compatibility for 1.0.6 functions removed in 1.1.
 
 = 1.1 =
 Release date 18 November 2019
 
- * Update plugin architecture and Barn2 library code.
- * Tested up to WordPress 5.3.
+* Update plugin architecture and Barn2 library code.
+* Tested up to WordPress 5.3.
 
 = 1.0.6 =
 Release date 20 November 2018
 
- * Added extra hooks for easier customization.
- * Tested with latest version of WordPress.
+* Added extra hooks for easier customization.
+* Tested with latest version of WordPress.
 
 = 1.0.5 =
 Release date 22 February 2018
@@ -182,13 +182,17 @@ Release date 14 March 2017
 * Other minor code improvements.
 
 = 1.0.3 =
-Added 'excerpts' shortcode option to allow user to choose whether the full comment or an excerpt is displayed. Defaults to true (i.e. show excerpt)
+
+* Added 'excerpts' shortcode option to allow user to choose whether the full comment or an excerpt is displayed. Defaults to true (i.e. show excerpt)
 
 = 1.0.2 =
-Added 'post_status' shortcode option.
+
+* Added 'post_status' shortcode option.
 
 = 1.0.1 =
-Improve handling for themes which use custom bullets in sidebar widgets.
+
+* Improve handling for themes which use custom bullets in sidebar widgets.
 
 = 1.0 =
-Initial release.
+
+* Initial release.
