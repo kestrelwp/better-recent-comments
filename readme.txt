@@ -62,8 +62,8 @@ The available placeholders are: `{avatar}`, `{author}`, `{post}`, `{comment}` an
 * `{avatar}` is the comment author's Gravatar image.
 * `{author}` is the comment author's name.
 * `{post}` is the title of the post, and contains a link to the author's comment below the post.
-* '{comment}` is the actual comment text.
-* '{date}` is the comment date (see the `date_format` option in the main description to set the date format)
+* `{comment}` is the actual comment text.
+* `{date}` is the comment date (see the `date_format` option in the main description to set the date format)
 
 Defaults to: `{author} on {post}: "{comment}" {date}`
 
@@ -74,7 +74,7 @@ In the code below change '10' to the number of words you would like. If you are 
 
 `
 add_filter( 'comment_excerpt_length', function( $number_of_words ) {
-   return 10;
+    return 10;
 } );
 `
 
