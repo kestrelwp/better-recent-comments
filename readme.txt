@@ -182,17 +182,13 @@ Release date 14 March 2017
 * Other minor code improvements.
 
 = 1.0.3 =
-
-* Added 'excerpts' shortcode option to allow user to choose whether the full comment or an excerpt is displayed. Defaults to true (i.e. show excerpt)
+Added 'excerpts' shortcode option to allow user to choose whether the full comment or an excerpt is displayed. Defaults to true (i.e. show excerpt)
 
 = 1.0.2 =
-
-* Added 'post_status' shortcode option.
+Added 'post_status' shortcode option.
 
 = 1.0.1 =
-
-* Improve handling for themes which use custom bullets in sidebar widgets.
+Improve handling for themes which use custom bullets in sidebar widgets.
 
 = 1.0 =
-
-* Initial release.
+Initial release.
