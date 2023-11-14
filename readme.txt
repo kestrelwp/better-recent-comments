@@ -2,10 +2,10 @@
 Contributors: andykeith, barn2media, amirition
 Donate link: https://barn2.com
 Tags: comments, widget, avatar, shortcode, wpml
-Requires at least: 5.1
-Tested up to: 6.3
-Requires PHP: 7.1
-Stable tag: 1.1.8
+Requires at least: 6.0
+Tested up to: 6.4
+Requires PHP: 7.4
+Stable tag: 1.1.9
 License: GPL-3.0
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -103,6 +103,10 @@ Please visit our [Knowledge Base](https://barn2.com/kb-categories/better-recent-
 1. Adding the Better Recent Comments widget to the sidebar.
 
 == Changelog ==
+
+= 1.1.9 = 
+Release date 14 November 2023
+
 
 = 1.1.8 =
 Release date 17 Aug 2023
