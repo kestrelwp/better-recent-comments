@@ -58,11 +58,19 @@ class Widget extends WP_Widget {
 			return;
 		}
 
+		$instance = wp_parse_args( $instance, [
+			'date'    => '',
+			'comment' => '',
+			'link'    => '',
+			'avatar'  => '',
+		] );
+
+		$instance['title'] = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Recent Comments', 'better-recent-comments' );
+
 		$output = $args['before_widget'];
 
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Recent Comments', 'better-recent-comments' );
 		// This filter is documented in wp-includes/default-widgets.php
-		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
+		$title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
 
 		if ( $title ) {
 			$output .= $args['before_title'] . $title . $args['after_title'];
