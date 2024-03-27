@@ -105,6 +105,10 @@ Please visit our [Knowledge Base](https://barn2.com/kb-categories/better-recent-
 == Changelog ==
 
 = 1.2.0 =
+Release date 27 March 2024
+* Fix notices in PHP 8.2
+* Misc: Update author to Kestrel
+
 = 1.1.9 =
 Release date 14 November 2023
 
