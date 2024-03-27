@@ -9,9 +9,9 @@ use WP_Widget,
  * This class provides the Better Recent Comments widget.
  *
  * @package   Barn2\better-recent-comments
- * @author    Barn2 Plugins <support@barn2.com>
+ * @author    Kestrel <support@kestrelwp.com>
  * @license   GPL-3.0
- * @copyright Barn2 Media Ltd
+ * @copyright Kestrel
  */
 class Widget extends WP_Widget {
 

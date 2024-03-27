@@ -1,6 +1,6 @@
 === Better Recent Comments ===
-Contributors: andykeith, barn2media, amirition
-Donate link: https://barn2.com
+Contributors: kestrelwp
+Donate link: https://kestrelwp.com
 Tags: comments, widget, avatar, shortcode, wpml
 Requires at least: 6.0
 Tested up to: 6.4
