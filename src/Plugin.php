@@ -11,9 +11,9 @@ use Barn2\Plugin\Better_Recent_Comments\Dependencies\Lib\Plugin\Simple_Plugin,
  * The main plugin class.
  *
  * @package   Barn2\better-recent-comments
- * @author    Barn2 Plugins <support@barn2.com>
+ * @author    Kestrel <support@kestrelwp.com>
  * @license   GPL-3.0
- * @copyright Barn2 Media Ltd
+ * @copyright Kestrel
  */
 class Plugin extends Simple_Plugin implements Registerable {
 

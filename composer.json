@@ -1,12 +1,12 @@
 {
-    "name": "barn2/better-recent-comments",
+    "name": "kestrelwp/better-recent-comments",
     "description": "Better Recent Comments WordPress plugin",
     "type": "wordpress-plugin",
     "license": "GPL-3.0",
     "authors": [
         {
-            "name": "Barn2 Plugins",
-            "email": "support@barn2.com"
+            "name": "Kestrel",
+            "email": "support@kestrelwp.com"
         }
     ],
     "require": {},
