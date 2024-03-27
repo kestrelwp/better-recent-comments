@@ -5,7 +5,7 @@ Tags: comments, widget, avatar, shortcode, wpml
 Requires at least: 6.0
 Tested up to: 6.4
 Requires PHP: 7.4
-Stable tag: 1.1.9
+Stable tag: 1.2.0
 License: GPL-3.0
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -104,6 +104,7 @@ Please visit our [Knowledge Base](https://barn2.com/kb-categories/better-recent-
 
 == Changelog ==
 
+= 1.2.0 =
 = 1.1.9 =
 Release date 14 November 2023
 
