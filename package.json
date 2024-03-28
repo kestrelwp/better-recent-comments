@@ -1,6 +1,6 @@
 {
     "name": "better-recent-comments",
-    "version": "1.1.9",
+    "version": "1.2.0",
     "description": "Better Recent Comments WordPress plugin",
     "main": "gulpfile.js",
     "directories": {
@@ -15,12 +15,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/andykeith/better-recent-comments.git"
+        "url": "git+https://github.com/kestrelwp/better-recent-comments.git"
     },
-    "author": "Barn2 Plugins <support@barn2.com>",
+    "author": "Kestrel <support@kestrelwp.com>",
     "license": "GPL-3.0",
     "bugs": {
-        "url": "https://github.com/andykeith/better-recent-comments/issues"
+        "url": "https://github.com/kestrelwp/better-recent-comments/issues"
     },
-    "homepage": "https://github.com/andykeith/better-recent-comments#readme"
+    "homepage": "https://github.com/kestrelwp/better-recent-comments#readme"
 }

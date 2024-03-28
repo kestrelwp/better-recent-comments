@@ -6,9 +6,9 @@ namespace Barn2\Plugin\Better_Recent_Comments;
  * This class provides utility functions for the Better Recent Comments plugin.
  *
  * @package   Barn2\better-recent-comments
- * @author    Barn2 Plugins <support@barn2.com>
+ * @author    Kestrel <support@kestrelwp.com>
  * @license   GPL-3.0
- * @copyright Barn2 Media Ltd
+ * @copyright Kestrel
  */
 class Util {
 
