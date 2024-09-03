@@ -11,13 +11,13 @@
  * Plugin Name:     Better Recent Comments
  * Plugin URI:      https://wordpress.org/plugins/better-recent-comments/
  * Description:     This plugin provides an improved widget and shortcode to show your most recent comments. If using WPML, comments are limited to posts in the current language.
- * Version:         1.2.0
+ * Version:         1.2.1
  * Author:          Kestrel
  * Author URI:      https://kestrelwp.com
  * Text Domain:     better-recent-comments
  * Domain Path:     /languages
  * Requires at least: 6.0
- * Tested up to: 6.5
+ * Tested up to: 6.6.1
  * Requires PHP: 7.4
  *
  * Copyright:       Kestrel
@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-const PLUGIN_VERSION = '1.2.0';
+const PLUGIN_VERSION = '1.2.1';
 const PLUGIN_FILE    = __FILE__;
 
 // Include autoloader.

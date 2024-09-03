@@ -1,6 +1,6 @@
 {
     "name": "better-recent-comments",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "Better Recent Comments WordPress plugin",
     "main": "gulpfile.js",
     "directories": {
