@@ -5,3 +5,4 @@ vendor-bin
 docs
 .phpdoc
 dist
+*/.DS_Store

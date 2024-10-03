@@ -3,7 +3,7 @@ Contributors: kestrelwp
 Donate link: https://kestrelwp.com
 Tags: comments, widget, avatar, shortcode, wpml
 Requires at least: 6.0
-Tested up to: 6.4
+Tested up to: 6.6.1
 Requires PHP: 7.4
 Stable tag: 1.2.0
 License: GPL-3.0
